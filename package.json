@@ -1,0 +1,26 @@
+{
+  "name": "vendure-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript automation test suite for the Vendure Remix Storefront, GraphQL Shop/Admin APIs, and the Vendure database — using the Page Object Model.",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ui-only": "playwright test tests/ui",
+    "test:api-only": "playwright test tests/api",
+    "test:db-only": "playwright test tests/db",
+    "db:seed": "ts-node utils/db/seedDemoDb.ts",
+    "db:seed-and-test": "npm run db:seed && npm run test:db-only",
+    "codegen": "playwright codegen https://storefront.demo.vendure.io/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^20.11.0",
+    "better-sqlite3": "^11.3.0",
+    "typescript": "^5.4.0"
+  }
+}
